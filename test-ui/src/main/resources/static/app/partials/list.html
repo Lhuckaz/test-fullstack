@@ -1,0 +1,36 @@
+<div class="container">
+	<h2>Users</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>Sex</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="u in ctrl.getAllUsers()">
+				<td>{{u.name}}</td>
+				<td>{{u.phone}}</td>
+				<td>{{u.email}}</td>
+				<td>{{u.sex}}</td>
+				<td>
+					<button type="button" ng-click="ctrl.removeUser(u.id)"
+						class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button> 
+					<a ui-sref="edit({id: u.id})">
+						<button type="button" class="btn btn-success">
+							<span class="glyphicon glyphicon-pencil"></span>
+						</button>
+					</a>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+
+	<a ui-sref="add">
+		<button type="button" class="btn btn-primary">Add</button>
+	</a>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+	<h2>Add User</h2>
+	<div class="alert alert-success" role="alert"
+		ng-if="ctrl.editedMessage">{{ctrl.editedMessage}}</div>
+	<div class="alert alert-danger" role="alert" ng-if="ctrl.errorMessage">{{ctrl.errorMessage}}</div>
+	<form ng-submit="ctrl.submit()" name="myForm">
+		<input type="hidden" ng-model="ctrl.user.id" />
+
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">Name</span> <input
+				ng-model="ctrl.user.name" ng-minlength="3" required type="text"
+				class="form-control" placeholder="Name"
+				aria-describedby="basic-addon1">
+		</div>
+		<br>
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">Phone</span> <input
+				ng-model="ctrl.user.phone" id="phone" placeholder="(xx) xxxxx-xxxx"
+				required type="text" class="form-control"
+				aria-describedby="basic-addon1">
+		</div>
+		<br>
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">Email</span> <input
+				ng-model="ctrl.user.email" id="email" placeholder="name@email.com"
+				required type="email" class="form-control"
+				aria-describedby="basic-addon1">
+		</div>
+		<br>
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">Sex</span> <input
+				ng-model="ctrl.user.sex" id="sex" required type="text"
+				placeholder="Male/Female" class="form-control"
+				aria-describedby="basic-addon1">
+		</div>
+		<br> <input type="submit" value="Editar" class="btn btn-primary">
+	</form>
+</div>
